@@ -4,13 +4,73 @@
     <meta charset="UTF-8">
     <title>Learning Html</title>
 </head>
-<body>
 
+<p id="function"></p>
+<p id="closure"></p>
+<p id="closureone"></p>
+<p id="prototype"></p>
+<p id="inheritance"></p>
 
+<script type="text/javascript">
 
+    //This is on functions
+    var marks = 0;
+    var English = 20;
+    var Kiswahili = 40;
+    function total (one, two)
+    {
+        marks = one + two;
+        document.getElementById("function").innerHTML = marks;
+    }
+    total (English, Kiswahili)
 
+// This is on closures
+    function myage(age) {
+        var myage = age + 3;
+        document.getElementById("closure").innerHTML = myage;
+        function realaga(){
+            var ageage = myage + 1;
+            document.getElementById("closureone").innerHTML = ageage;
 
+        };
+    }
 
+    myage(16);
+
+    //This is on prototypes
+    function mug(color, handle)
+    {
+        this.Color = color;
+        this.Handle = handle;
+    }
+    //Using prototype
+    mug.prototype.name = 'Coffee mug'
+     mug.prototype.color = function ()
+    {
+    return this.Color = mug.prototype.name + 'yellow_green';
+    }
+
+    document.getElementById("prototype").innerHTML = mug.prototype.color();
+
+    //This is on inheritance
+
+    var name = 'tea_cup';
+    var handle = 1
+    var color = 'yellow';
+    var material = 'plastic';
+    function cup (name, handle, color , material)
+    {
+        mug. Call (this, name, 1);
+
+        this. color = color
+       this. Material = material
+    }
+
+    cup.Prototype = new mug ();
+    cup.prototype.constructor = cup;
+    document.getElementById("inheritance").innerHTML = cup.prototype.constructor();
+
+</script>
 
 
 
